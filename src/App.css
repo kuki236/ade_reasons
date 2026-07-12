@@ -1,0 +1,293 @@
+.app {
+  min-height: 100%;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 32px;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(255,255,255,0.4) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 90%, rgba(255,255,255,0.3) 0%, transparent 50%),
+    linear-gradient(160deg, rgba(252,228,236,0.8) 0%, rgba(248,187,208,0.8) 40%, rgba(244,143,177,0.8) 100%),
+    url('/kikiki.jpg') center/cover no-repeat;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Paw print pattern overlay */
+.app::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle 4px at 15% 10%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 3px at 25% 14%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 4px at 35% 8%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 5px at 55% 15%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 3px at 70% 9%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 4px at 85% 13%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 4px at 10% 30%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 5px at 45% 25%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 3px at 75% 35%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 4px at 90% 28%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 5px at 20% 50%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 3px at 60% 55%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 4px at 80% 45%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 4px at 30% 70%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 5px at 65% 75%, rgba(233,30,99,0.06) 0%, transparent 100%),
+    radial-gradient(circle 3px at 50% 85%, rgba(233,30,99,0.05) 0%, transparent 100%),
+    radial-gradient(circle 4px at 85% 65%, rgba(233,30,99,0.06) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+/* Kitty ears */
+.hk-ears {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hk-ear {
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50% 50% 0 0;
+  backdrop-filter: blur(4px);
+}
+
+.hk-ear::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 24px;
+  background: rgba(248, 187, 208, 0.5);
+  border-radius: 50% 50% 0 0;
+}
+
+.hk-ear-left {
+  left: 10%;
+  transform: rotate(-12deg);
+}
+
+.hk-ear-right {
+  right: 10%;
+  transform: rotate(12deg);
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.hk-logo {
+  filter: drop-shadow(0 2px 8px rgba(233, 30, 99, 0.15));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.app-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #880e4f;
+  text-align: center;
+  letter-spacing: -0.3px;
+  text-shadow: 0 1px 2px rgba(233, 30, 99, 0.1);
+}
+
+/* Shared card style */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 24px;
+  padding: 32px 24px;
+  box-shadow:
+    0 8px 32px rgba(233, 30, 99, 0.12),
+    0 2px 8px rgba(233, 30, 99, 0.08);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+
+.home-card {
+  padding: 28px 24px;
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #880e4f;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.home-hk-deco {
+  width: 60px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(233, 30, 99, 0.15);
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: #ad1457;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Divider */
+.home-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.home-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #f8bbd0, transparent);
+}
+
+.home-divider-text {
+  font-size: 12px;
+  color: #c2185b;
+  font-weight: 600;
+  opacity: 0.6;
+}
+
+/* Button base */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: none;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  width: 100%;
+  text-align: center;
+  line-height: 1.3;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-pink {
+  background: linear-gradient(135deg, #ec407a, #e91e63);
+  color: white;
+  box-shadow: 0 4px 16px rgba(233, 30, 99, 0.3);
+}
+
+.btn-pink:hover {
+  box-shadow: 0 6px 24px rgba(233, 30, 99, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: #c2185b;
+  border: 2px solid #f48fb1;
+}
+
+.btn-outline:hover {
+  background: rgba(233, 30, 99, 0.04);
+}
+
+/* Back button */
+.btn-back {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #880e4f;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 12px;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 12px;
+  -webkit-tap-highlight-color: transparent;
+  backdrop-filter: blur(4px);
+  align-self: flex-start;
+}
+
+.btn-back:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (min-width: 480px) {
+  .app {
+    padding: 32px 24px 40px;
+  }
+
+  .card {
+    padding: 40px 32px;
+  }
+
+  .card-title {
+    font-size: 22px;
+  }
+
+  .btn {
+    font-size: 17px;
+    padding: 18px 28px;
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .app {
+    padding: 16px 12px 24px;
+  }
+
+  .card {
+    padding: 24px 20px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 14px 20px;
+  }
+
+  .hk-logo svg {
+    width: 64px;
+    height: 53px;
+  }
+}

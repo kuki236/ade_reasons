@@ -1,0 +1,144 @@
+.card-stack {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.card-stack-counter {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ad1457;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.card-stack-area {
+  position: relative;
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.card-current {
+  width: 100%;
+  padding: 32px 24px;
+  background: white;
+  border-radius: 24px;
+  box-shadow:
+    0 8px 32px rgba(233, 30, 99, 0.12),
+    0 2px 8px rgba(233, 30, 99, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  position: relative;
+  z-index: 2;
+}
+
+.card-preview {
+  width: 92%;
+  padding: 24px 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  position: absolute;
+  bottom: -12px;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+.card-preview-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #880e4f;
+  text-align: center;
+  opacity: 0.5;
+  line-height: 1.4;
+}
+
+.card-reason {
+  font-size: 20px;
+  font-weight: 700;
+  color: #4a0e2e;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0 8px;
+}
+
+.next-btn {
+  margin-top: 8px;
+}
+
+/* Result screen */
+.result-card {
+  text-align: center;
+  padding: 40px 24px;
+}
+
+.result-hk-deco {
+  width: 64px;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(233, 30, 99, 0.15);
+}
+
+.result-emoji {
+  font-size: 56px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.result-text {
+  font-size: 16px;
+  color: #880e4f;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (min-width: 480px) {
+  .card-current {
+    padding: 40px 32px;
+    min-height: 200px;
+  }
+
+  .card-reason {
+    font-size: 22px;
+  }
+
+  .card-stack-area {
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .card-current {
+    padding: 24px 20px;
+    min-height: 150px;
+  }
+
+  .card-reason {
+    font-size: 17px;
+  }
+
+  .card-stack-area {
+    min-height: 190px;
+  }
+}
